@@ -213,10 +213,10 @@ if __name__ == "__main__":
     ncm_file_list = list(Path(input_dir).glob("*.ncm"))
     
     if not ncm_file_list:
-        print(f"⚠️  在 '{input_dir}' 文件夹中没有找到任何 .ncm 文件。")
-        print("请将需要转换的 ncm 文件放入该文件夹。")
+        print(f"[WARRNING]  在 '{input_dir}' 文件夹中没有找到任何 .ncm 文件。")
+        print("请将需要转换的 ncm 文件放入该文件夹方可正常进行转换。")
     else:
-        print(f"▶️  即将开始转换 '{input_dir}' 文件夹中的 {len(ncm_file_list)} 个 ncm 文件...")
+        print(f"[START]  即将开始转换 '{input_dir}' 文件夹中的 {len(ncm_file_list)} 个 ncm 文件...")
         print(f"   - 输出目录: {output_dir}")
         print(f"   - 完成后删除原文件: {'是' if delete_original else '否'}")
         
@@ -226,4 +226,7 @@ if __name__ == "__main__":
                 pbar.update(1)
         
         print("-" * 40)
-        print("🎉 所有文件转换完成。")
+        print("[SUCCESS!] 所有文件转换完成。")
+    
+    # 新增等待用户按键的代码
+    input("\n按任意键退出...")
